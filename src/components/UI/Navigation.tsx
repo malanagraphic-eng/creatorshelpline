@@ -72,7 +72,7 @@ export const Navigation: React.FC = () => {
               color: isDarkMode ? "#FFFFFF" : "#000000",
             }}
           >
-            CreatKaro<span className="text-orange-500 ml-1">.</span>
+            CreatorsHelpline<span className="text-orange-500 ml-1">.</span>
           </Typography>
 
           {/* Desktop Menu */}
