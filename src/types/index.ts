@@ -2,10 +2,20 @@ export interface Project {
   id: string;
   title: string;
   description: string;
-  image: string;
-  category: 'brand-development' | 'social-media' | 'web-design' | 'graphic-design';
+  category:
+    | "brand-development"
+    | "social-media"
+    | "web-design"
+    | "graphic-design"
+    | "graphics"
+    | "video"
+    | "web";
   tags: string[];
   link?: string;
+  image?: string;
+  mediaType?: "image" | "video";
+  mediaUrl?: string;
+  thumbnail?: string;
 }
 
 export interface Service {
