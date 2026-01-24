@@ -4,6 +4,8 @@ import { AnimationState, Project, Service } from '../types';
 interface AppState extends AnimationState {
   projects: Project[];
   services: Service[];
+  selectedProject: Project | null;
+  setSelectedProject: (project: Project | null) => void;
   setLoading: (loading: boolean) => void;
   setCurrentPage: (page: string) => void;
   setReducedMotion: (reduced: boolean) => void;
@@ -19,7 +21,8 @@ export const useStore = create<AppState>((set) => ({
   isDarkMode: true,
   projects: [],
   services: [],
-  
+  selectedProject: null,
+  setSelectedProject: (project) => set({ selectedProject: project }),
   setLoading: (loading) => set({ isLoading: loading }),
   setCurrentPage: (page) => set({ currentPage: page }),
   setReducedMotion: (reduced) => set({ reducedMotion: reduced }),
