@@ -32,8 +32,8 @@ function App () {
         <MouseFollower />
         <main>
           <Hero />
-          <Services />
           <Projects />
+          <Services />
           <Team />
           <Testimonials />
           <Contact />

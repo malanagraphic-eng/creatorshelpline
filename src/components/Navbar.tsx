@@ -14,8 +14,8 @@ import {
 
 const navLinks = [
   { label: 'Home', href: '#home' },
-  { label: 'Services', href: '#services' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Services', href: '#services' },
   { label: 'Team', href: '#team' },
   { label: 'Contact', href: '#contact' }
 ]
@@ -68,7 +68,7 @@ export function Navbar () {
   }
 
   return (
-    <nav className='sticky  top-0 left-0 right-0 z-50 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-800 relative'>
+    <nav className='sticky top-0 left-0 right-0 z-50 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-800'>
       {/* Scroll progress bar - grows with scroll */}
       <div
         className='absolute bottom-0 left-0 h-0.5 bg-[#f97316] transition-all duration-150'
@@ -135,9 +135,14 @@ export function Navbar () {
                 <Menu className='h-6 w-6' />
               </Button>
             </SheetTrigger>
-            <SheetContent side='right' className='w-[280px] sm:w-[320px]'>
+            <SheetContent
+              side='right'
+              className='w-[280px] sm:w-[320px] bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800'
+            >
               <SheetHeader>
-                <SheetTitle>Menu</SheetTitle>
+                <SheetTitle className='text-neutral-900 dark:text-white'>
+                  Menu
+                </SheetTitle>
               </SheetHeader>
               <nav className='flex flex-col gap-6 mt-8'>
                 {navLinks.map(link => (
@@ -146,9 +151,9 @@ export function Navbar () {
                     href={link.href}
                     onClick={e => scrollTo(e, link.href)}
                     className={cn(
-                      'text-lg font-medium text-neutral-700 dark:text-neutral-300 hover:text-[#f97316] transition-colors py-2 border-b border-neutral-100 dark:border-neutral-800',
-                      activeSection === link.href &&
-                        'text-[#f97316] font-semibold'
+                      'text-lg font-medium py-2 border-b border-neutral-200 dark:border-neutral-700 transition-colors hover:text-[#f97316]',
+                      'text-neutral-900 dark:text-neutral-100',
+                      activeSection === link.href && 'text-[#f97316] font-semibold'
                     )}
                   >
                     {link.label}
