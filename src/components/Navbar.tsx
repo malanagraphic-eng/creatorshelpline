@@ -3,7 +3,7 @@ import { Menu, Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 import { cn } from '../lib/utils'
-import { Button } from './ui/button'
+import { Button } from './UI/button'
 import {
   Sheet,
   SheetContent,
