@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from './UI/card';
 
 /** Professional SaaS/CRM/Dashboard UI images - Dribbble/Behance style with Unsplash fallbacks */
 const works = [

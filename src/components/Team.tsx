@@ -21,7 +21,7 @@ const team = [
     role: 'Co-Founder',
     desc: 'Key leader driving creative vision and business growth.',
     image: '/saifullahmalik.png',
-    url: '#'
+    url: 'https://www.behance.net/gallery/197668731/Portfolio-Graphic-Designer'
   }
 ]
 

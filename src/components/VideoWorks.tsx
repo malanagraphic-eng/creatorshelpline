@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from './UI/card';
 
 const videos = [
   { id: 'sKSosCzBP14', title: 'Creative Video Showcase' },

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Dialog, DialogContent, DialogTitle } from './ui/dialog';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './UI/tabs';
+import { Card, CardContent, CardHeader, CardTitle } from './UI/card';
+import { Dialog, DialogContent, DialogTitle } from './UI/dialog';
 import { Play } from 'lucide-react';
 
 const FALLBACK_IMAGE = 'https://placehold.co/600x400?text=Project';

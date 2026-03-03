@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { Card, CardContent } from './ui/card';
+import { Card, CardContent } from './UI/card';
 
 const FALLBACK_IMAGE = 'https://placehold.co/200x120?text=Review';
 

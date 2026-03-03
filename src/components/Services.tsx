@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from './UI/card';
 import { Video, Globe, Megaphone, Image, Code2 } from 'lucide-react';
 
 /** Services - Website Development (not Brand Development) */

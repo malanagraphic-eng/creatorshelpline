@@ -10,7 +10,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger
-} from './ui/sheet'
+} from './UI/sheet'
 
 const navLinks = [
   { label: 'Home', href: '#home' },
