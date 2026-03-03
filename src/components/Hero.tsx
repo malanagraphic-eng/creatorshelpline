@@ -1,7 +1,7 @@
 import { motion, useAnimation } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { WhatsAppButton } from './WhatsAppButton'
-import { Button } from './ui/button'
+import { Button } from './UI/button'
 
 const FALLBACK_IMAGE = 'https://placehold.co/400x300?text=Project'
 
