@@ -14,7 +14,7 @@ const team = [
     role: 'MERN-Stack & Next.js Developer',
     desc: 'Full-Stack Engineer with 6+ years building secure, scalable applications.',
     image: '/mubaidjavaid.png',
-    url: 'https://mubaidjavaid.vercel.app/'
+    url: 'https://mubaidjavaid-ten.vercel.app/'
   },
   {
     name: 'Saifullah Malik',
