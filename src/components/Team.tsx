@@ -22,6 +22,14 @@ const team = [
     desc: 'Key leader driving creative vision and business growth.',
     image: '/saifullahmalik.png',
     url: 'https://www.behance.net/gallery/197668731/Portfolio-Graphic-Designer'
+  },
+  {
+    name: 'Sufyan Memon',
+    role: 'Agency Growth Manager',
+    desc: 'Focused on identifying business challenges and delivering high-impact graphic design and website solutions.',
+    image:
+      'https://instagram.fmux2-1.fna.fbcdn.net/v/t51.82787-15/621737310_18091948742294811_982399816922300275_n.webp?_nc_cat=106&ig_cache_key=MzgxNTkxOTAyNDQxNzI4NTU3Mg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=NoWZUESTlXwQ7kNvwFlnGzd&_nc_oc=AdrAqgopNNIkYxEjBqEhR0FSYtlhK1gMJjHQW8g2LD6BNd4WeSkjzo_pWkTrA5bbThY&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fmux2-1.fna&_nc_gid=Zdwi_gNi79G1zy52rOkXXQ&_nc_ss=7a22e&oh=00_AQDoGRAJm7OqPfCMPy0MnGCk8ZOa4OA8tIL1x7MrEzleiw&oe=6A4A9786',
+    url: ''
   }
 ]
 
@@ -49,7 +57,7 @@ export function Team () {
           </p>
         </motion.div>
 
-        <div className='grid md:grid-cols-3 gap-10 lg:gap-12 max-w-5xl mx-auto place-items-center'>
+        <div className='grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 max-w-6xl mx-auto place-items-center'>
           {team.map((member, i) => (
             <motion.div
               key={member.name}
