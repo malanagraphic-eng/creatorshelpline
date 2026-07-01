@@ -27,7 +27,7 @@ function App () {
         wheelMultiplier: 1
       }}
     >
-      <div className='min-h-screen bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100'>
+      <div className='min-h-screen bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 pb-16 md:pb-0'>
         <Navbar />
         <MouseFollower />
         <main>

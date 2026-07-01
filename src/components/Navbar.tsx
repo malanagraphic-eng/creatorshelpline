@@ -1,27 +1,19 @@
 import { motion } from 'framer-motion'
-import { Menu, Moon, Sun } from 'lucide-react'
+import { Briefcase, Home, Mail, Moon, Sun, Users, Wrench } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 import { cn } from '../lib/utils'
 import { Button } from './UI/button'
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger
-} from './UI/sheet'
 
 const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Services', href: '#services' },
-  { label: 'Team', href: '#team' },
-  { label: 'Contact', href: '#contact' }
+  { label: 'Home', href: '#home', icon: Home },
+  { label: 'Projects', href: '#projects', icon: Briefcase },
+  { label: 'Services', href: '#services', icon: Wrench },
+  { label: 'Team', href: '#team', icon: Users },
+  { label: 'Contact', href: '#contact', icon: Mail }
 ]
 
 export function Navbar () {
-  const [open, setOpen] = useState(false)
   const { theme, setTheme } = useTheme()
   const [scrollProgress, setScrollProgress] = useState(0)
   const [activeSection, setActiveSection] = useState('#home')
@@ -64,43 +56,49 @@ export function Navbar () {
     e.preventDefault()
     const el = document.querySelector(href)
     el?.scrollIntoView({ behavior: 'smooth' })
-    setOpen(false)
   }
 
   return (
-    <nav className='sticky top-0 left-0 right-0 z-50 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-800'>
-      {/* Scroll progress bar - grows with scroll */}
-      <div
-        className='absolute bottom-0 left-0 h-0.5 bg-[#f97316] transition-all duration-150'
-        style={{ width: `${scrollProgress}%` }}
-      />
-      <div className='container mx-auto px-4 h-16 flex items-center justify-between'>
-        <motion.a
-          href='#home'
-          onClick={e => scrollTo(e, '#home')}
-          className='text-xl font-bold text-neutral-900 dark:text-white'
-          whileHover={{ scale: 1.02 }}
-        >
-          CreatorsHelpline<span className='text-[#f97316]'>.</span>
-        </motion.a>
+    <>
+      {/* ── Desktop top navbar ── */}
+      <nav className='sticky top-0 left-0 right-0 z-50 hidden md:block bg-white/95 dark:bg-neutral-900/95 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-800'>
+        {/* Scroll progress bar */}
+        <div
+          className='absolute bottom-0 left-0 h-0.5 bg-[#f97316] transition-all duration-150'
+          style={{ width: `${scrollProgress}%` }}
+        />
+        <div className='container mx-auto px-4 h-16 flex items-center justify-between'>
+          {/* Logo - left */}
+          <motion.a
+            href='#home'
+            onClick={e => scrollTo(e, '#home')}
+            className='text-xl font-bold text-neutral-900 dark:text-white'
+            whileHover={{ scale: 1.02 }}
+          >
+            CreatorsHelpline<span className='text-[#f97316]'>.</span>
+          </motion.a>
 
-        <div className='hidden md:flex items-center gap-8'>
-          {navLinks.map(link => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={e => scrollTo(e, link.href)}
-              className={cn(
-                'relative text-sm font-medium text-neutral-600 hover:text-[#f97316] transition-colors pb-1',
-                activeSection === link.href && 'text-[#f97316]'
-              )}
-            >
-              {link.label}
-              {activeSection === link.href && (
-                <span className='absolute bottom-0 left-0 right-0 h-0.5 bg-[#f97316] rounded-full' />
-              )}
-            </a>
-          ))}
+          {/* Nav links - center */}
+          <div className='absolute left-1/2 -translate-x-1/2 flex items-center gap-8'>
+            {navLinks.map(link => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={e => scrollTo(e, link.href)}
+                className={cn(
+                  'relative text-sm font-medium text-neutral-600 hover:text-[#f97316] transition-colors pb-1',
+                  activeSection === link.href && 'text-[#f97316]'
+                )}
+              >
+                {link.label}
+                {activeSection === link.href && (
+                  <span className='absolute bottom-0 left-0 right-0 h-0.5 bg-[#f97316] rounded-full' />
+                )}
+              </a>
+            ))}
+          </div>
+
+          {/* Theme toggle - right */}
           <Button
             variant='ghost'
             size='icon'
@@ -115,13 +113,29 @@ export function Navbar () {
             )}
           </Button>
         </div>
+      </nav>
 
-        <div className='flex md:hidden items-center gap-2'>
+      {/* ── Mobile top bar (logo + theme toggle only) ── */}
+      <nav className='sticky top-0 left-0 right-0 z-50 md:hidden bg-white/95 dark:bg-neutral-900/95 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-800'>
+        <div
+          className='absolute bottom-0 left-0 h-0.5 bg-[#f97316] transition-all duration-150'
+          style={{ width: `${scrollProgress}%` }}
+        />
+        <div className='container mx-auto px-4 h-14 flex items-center justify-between'>
+          <motion.a
+            href='#home'
+            onClick={e => scrollTo(e, '#home')}
+            className='text-lg font-bold text-neutral-900 dark:text-white'
+            whileHover={{ scale: 1.02 }}
+          >
+            CreatorsHelpline<span className='text-[#f97316]'>.</span>
+          </motion.a>
           <Button
             variant='ghost'
             size='icon'
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
             className='text-neutral-600 dark:text-neutral-400'
+            aria-label='Toggle theme'
           >
             {theme === 'dark' ? (
               <Sun className='h-5 w-5' />
@@ -129,41 +143,43 @@ export function Navbar () {
               <Moon className='h-5 w-5' />
             )}
           </Button>
-          <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger asChild>
-              <Button variant='ghost' size='icon' aria-label='Open menu'>
-                <Menu className='h-6 w-6' />
-              </Button>
-            </SheetTrigger>
-            <SheetContent
-              side='right'
-              className='w-[280px] sm:w-[320px] bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800'
-            >
-              <SheetHeader>
-                <SheetTitle className='text-neutral-900 dark:text-white'>
-                  Menu
-                </SheetTitle>
-              </SheetHeader>
-              <nav className='flex flex-col gap-6 mt-8'>
-                {navLinks.map(link => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    onClick={e => scrollTo(e, link.href)}
-                    className={cn(
-                      'text-lg font-medium py-2 border-b border-neutral-200 dark:border-neutral-700 transition-colors hover:text-[#f97316]',
-                      'text-neutral-900 dark:text-neutral-100',
-                      activeSection === link.href && 'text-[#f97316] font-semibold'
-                    )}
-                  >
-                    {link.label}
-                  </a>
-                ))}
-              </nav>
-            </SheetContent>
-          </Sheet>
+        </div>
+      </nav>
+
+      {/* ── Mobile bottom navigation bar ── */}
+      <div className='fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white/95 dark:bg-neutral-900/95 backdrop-blur-md border-t border-neutral-200 dark:border-neutral-800'>
+        <div className='flex items-center justify-around h-16 px-2 pb-[env(safe-area-inset-bottom)]'>
+          {navLinks.map(link => {
+            const Icon = link.icon
+            const isActive = activeSection === link.href
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={e => scrollTo(e, link.href)}
+                className={cn(
+                  'flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-xl transition-colors min-w-[56px]',
+                  isActive
+                    ? 'text-[#f97316]'
+                    : 'text-neutral-500 dark:text-neutral-400'
+                )}
+              >
+                <Icon className={cn('h-5 w-5', isActive && 'stroke-[2.5]')} />
+                <span className={cn('text-[10px] font-medium', isActive && 'font-semibold')}>
+                  {link.label}
+                </span>
+                {isActive && (
+                  <motion.div
+                    layoutId='mobile-nav-indicator'
+                    className='absolute top-0 w-8 h-0.5 bg-[#f97316] rounded-full'
+                    transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+                  />
+                )}
+              </a>
+            )
+          })}
         </div>
       </div>
-    </nav>
+    </>
   )
 }

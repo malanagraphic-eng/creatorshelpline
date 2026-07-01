@@ -242,13 +242,13 @@ export function Projects() {
             <TabsTrigger value="all">All Projects</TabsTrigger>
             <TabsTrigger value="video">Video Editing</TabsTrigger>
             <TabsTrigger value="thumbnails">Thumbnails</TabsTrigger>
-            <TabsTrigger value="graphics">Graphics Design</TabsTrigger>
+            {/* <TabsTrigger value="graphics">Graphics Design</TabsTrigger> */}
             <TabsTrigger value="webdev">Website & Development</TabsTrigger>
           </TabsList>
 
           <TabsContent value="all" className="mt-0">
             <ProjectGrid
-              items={[...graphicsProjects, ...videoProjects, ...webDevProjects]}
+              items={[...videoProjects, ...webDevProjects]}
               onPreview={setPreview}
             />
           </TabsContent>
@@ -289,9 +289,9 @@ export function Projects() {
               ))}
             </div>
           </TabsContent>
-          <TabsContent value="graphics">
+          {/* <TabsContent value="graphics">
             <ProjectGrid items={graphicsProjects} onPreview={setPreview} />
-          </TabsContent>
+          </TabsContent> */}
           <TabsContent value="webdev">
             <ProjectGrid items={webDevProjects} onPreview={setPreview} />
           </TabsContent>
