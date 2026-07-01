@@ -3,11 +3,13 @@
   <head>
     <meta charset="UTF-8" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/logo.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/logo.png" />
-    <link rel="apple-touch-icon" href="/logo.png" />
+    <!-- Favicon (Google requires 48x48+ square icon at a crawlable URL) -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Title -->
     <title>CreatorsHelpline – Creative Solutions That Convert</title>
@@ -32,16 +34,18 @@
     <meta property="og:url" content="https://creatorshelpline.com/" />
     <meta property="og:title" content="CreatorsHelpline – Creative Solutions That Convert" />
     <meta property="og:description" content="CreatorsHelpline is a creative digital agency offering branding, web development, graphic design, and video editing solutions that convert." />
-    <meta property="og:image" content="https://creatorshelpline.com/logo.png" />
-    <meta property="og:image:width" content="512" />
-    <meta property="og:image:height" content="512" />
+    <meta property="og:image" content="https://creatorshelpline.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="CreatorsHelpline logo" />
     <meta property="og:site_name" content="CreatorsHelpline" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="CreatorsHelpline – Creative Solutions That Convert" />
     <meta name="twitter:description" content="CreatorsHelpline is a creative digital agency offering branding, web development, graphic design, and video editing solutions that convert." />
-    <meta name="twitter:image" content="https://creatorshelpline.com/logo.png" />
+    <meta name="twitter:image" content="https://creatorshelpline.com/og-image.png" />
+    <meta name="twitter:image:alt" content="CreatorsHelpline logo" />
 
     <!-- Services SEO -->
     <meta name="subject" content="Creative Digital Agency Services" />
@@ -59,7 +63,7 @@
       "name": "CreatorsHelpline",
       "url": "https://creatorshelpline.com",
       "logo": "https://creatorshelpline.com/logo.png",
-      "image": "https://creatorshelpline.com/logo.png",
+      "image": "https://creatorshelpline.com/og-image.png",
       "description": "CreatorsHelpline is a creative digital agency offering branding, web development, graphic design, video editing, and social media marketing solutions that convert.",
       "sameAs": [],
       "hasOfferCatalog": {
@@ -116,7 +120,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://images.pexels.com" />
 
-    <!-- Google Fonts -->
+    <!-- Inter – site font (matches creatorshelpline.com) -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
@@ -148,33 +152,6 @@
         border-radius: 10px;
         border: 2px solid transparent;
         background-clip: content-box;
-      }
-
-      @font-face {
-        font-family: "Coolvetica";
-        src: url("/fonts/coolvetica.woff") format("woff");
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-      }
-
-      /* Fallback for when Coolvetica is not available */
-      .font-coolvetica {
-        font-family:
-          "Coolvetica",
-          "Inter",
-          -apple-system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          Roboto,
-          Helvetica,
-          Arial,
-          sans-serif;
-      }
-
-      /* Performance optimizations */
-      * {
-        box-sizing: border-box;
       }
 
       body {
@@ -229,7 +206,7 @@
         align-items: center;
         justify-content: center;
         z-index: 9999;
-        font-family: "Coolvetica", "Inter", sans-serif;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         transition: background 0.3s ease;
       }
 
